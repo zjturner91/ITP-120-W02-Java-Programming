@@ -1,5 +1,5 @@
       int ticketsResolved;
-      ticketsResolved = scnr.nextInt();  // The first integer is read
+      ticketsResolved = scnr.nextInt();
 
       while (ticketsResolved != -99) {
          if (ticketsResolved > 20) {
