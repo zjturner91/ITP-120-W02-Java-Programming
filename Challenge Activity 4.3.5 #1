@@ -1,0 +1,10 @@
+		String inputWord;
+		int itemNumber;
+
+		inputWord = scnr.next();
+		itemNumber = scnr.nextInt();
+
+		while ((itemNumber > 70) && (itemNumber < 95)) {
+			inputWord = scnr.next();
+			itemNumber = scnr.nextInt();
+		}

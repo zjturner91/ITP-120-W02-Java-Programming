@@ -1,0 +1,10 @@
+		double inputData;
+		int numCounts;
+		numCounts = 0;
+
+		inputData = scnr.nextDouble();
+
+		while ((inputData > -35.0) && (inputData < 15)) {
+			numCounts = numCounts + 1;
+			inputData = scnr.nextDouble();
+		}
