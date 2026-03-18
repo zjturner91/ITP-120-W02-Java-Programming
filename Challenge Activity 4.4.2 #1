@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class ValueReader {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+	  
+      int inputValue;
+      int i;
+
+      inputValue = scnr.nextInt();
+
+      for (i = 0; i < 4; i++) {
+         System.out.println(inputValue);
+      }
+   }
+}

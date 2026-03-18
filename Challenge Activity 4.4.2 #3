@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class PeriodSeparatedValues {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int numVals;
+      int inputVal;
+      int i;
+
+      numVals = scnr.nextInt();
+
+      for (i = 0; i < numVals; i++) {
+         inputVal = scnr.nextInt();
+         if (i < numVals - 1) {
+            System.out.print(inputVal + ".");
+         }
+         else {
+            System.out.print(inputVal);
+         }
+      }
+      System.out.println();
+   }
+}
+
+// Integer numVals is read from input representing the number of integers to be read next. Use a for loop to iterate from 0 to numVals - 1. In the loop:
+
+// Assign inputVal with the integer value read from input.
+// Output inputVal.
+// Unless inputVal is the last input read, output "." after inputVal.

@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class NumberOfTigers {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int numInts;
+      int inputVal;
+      int i;
+
+      numInts = scnr.nextInt();
+
+      for (i = 0; i < numInts; ++i) {
+         inputVal = scnr.nextInt();
+         System.out.println(inputVal + " tigers");
+      }
+   }
+}
+
+// Integer numInts is read from input representing the number of integers to be read next. A for loop iterates from 0 to numInts - 1. Inside the loop:
+
+// Assign variable inputVal with an integer read from input.
+// Output inputVal, followed by " tigers", ending with a newline.
