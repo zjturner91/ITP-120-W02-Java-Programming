@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class ExtractUniqueCharacters {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      String inputString;
+      int i;
+   
+      inputString = scnr.nextLine();
+
+		System.out.print("Unique characters found: ");
+
+      for (i = 0; i < inputString.length(); ++i) {
+         if (inputString.indexOf(inputString.charAt(i)) == i) {
+            System.out.print(inputString.charAt(i) + " ");
+         }
+      }
+      System.out.println();
+   }
+}
+
+// String inputString is read from input. Output each unique character found in inputString in the order that the character first appears, followed by a space (" ").
+// Ex: If the input is Washington, then the output is:
+// Unique characters found: W a s h i n g t o 
+// Note: inputString.indexOf(inputString.charAt(i)) == i returns true if inputString.charAt(i) occurs the first time at index i of inputString.
