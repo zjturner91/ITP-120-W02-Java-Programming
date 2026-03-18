@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class PositiveIntegers {
+   public static void main(String [] args) {
+      Scanner scnr = new Scanner(System.in);
+      boolean allPositive;
+      int inCount;
+      int i;
+      int val;
+
+      allPositive = true;
+      inCount = scnr.nextInt();
+   
+      for (i = 0; i < inCount; ++i) {
+         val = scnr.nextInt();
+         if (val <= 0) {
+            allPositive = false;
+         }
+      }
+
+      if (allPositive) {
+         System.out.println("All match");
+      }
+      else {
+         System.out.println("Not all match");
+      }
+   }
+}
+
+// Integer inCount is read from input representing the number of integers to be read next. 
+// Use a for loop to read in the remaining integers from input into val. If all integers read from input are positive, assign allPositive with true. Otherwise, assign allPositive with false.
+// Ex: If the input is:
+// 3
+// 25 95 75
+// then the output is:
+// All match
