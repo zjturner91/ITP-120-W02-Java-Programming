@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class SmallestValues {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int inputValue;
+      int smallestVal = 0;
+      int i;
+
+      for (i = 0; i < 8; ++i) {
+         inputValue = scnr.nextInt();
+         if (i < 1) {
+            smallestVal = inputValue;
+         }
+         else if (inputValue < smallestVal) {
+            smallestVal = inputValue;
+         }
+      }
+      System.out.println(smallestVal);
+   }
+}
+
+// Write a for loop that iterates eight times to find the minimum value in a list of eight integer values. Within the loop:
+
+// Read an integer value from input into variable inputValue.
+// If the current iteration is the first iteration, reassign smallestVal with inputValue. No other values have been read yet, so the first value assigned to inputValue is the smallest integer value read by default.
+// Otherwise, if inputValue is less than smallestVal, reassign smallestVal with the value of inputValue.

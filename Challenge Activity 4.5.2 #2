@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class LargestValues {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int valCount;
+      double inValue;
+      double largestVal = 0.0;
+      int i;
+
+      valCount = scnr.nextInt();
+      for (i = 0; i < valCount; ++i) {
+         inValue = scnr.nextDouble();
+         if (i == 0) {
+            largestVal = inValue;
+         }
+         else if (inValue > largestVal) {
+            largestVal = inValue;
+         }
+         System.out.println("Value read: " + inValue);
+      }
+      System.out.println("Largest: " + largestVal);
+   }
+}
+
+// Integer valCount is read from input representing the number of floating-point values to be read next. Use a for loop to read the remaining floating-point values from input. Within the loop:
+
+// For each floating-point value read, output "Value read: " followed by the value and a newline.
+// Use an if-else statement to reassign largestVal with the largest floating-point value read, replacing the initial 0.0.
