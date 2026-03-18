@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class ForLoops {
+   public static void main (String [] args) {
+      int firstNumber;
+      int lastNumber;
+      int i;
+      
+      Scanner input = new Scanner(System.in);
+      firstNumber = input.nextInt();
+      lastNumber = input.nextInt();
+      
+      for (i = firstNumber; i <= lastNumber; ++i) {
+         System.out.print(i + " ");
+      }
+   }
+}
+
+// Write a for loop that prints from firstNumber to lastNumber.
+// Ex: If the input is:
+// -3 1
+// the output is:
+// -3 -2 -1 0 1 

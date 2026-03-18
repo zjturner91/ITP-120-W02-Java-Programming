@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class ForLoops {
+   public static void main (String [] args) {
+      int numVal;
+      int i;
+      
+      Scanner input = new Scanner(System.in);
+      numVal = input.nextInt();
+
+      System.out.println("Ready!");
+      for (i = numVal;  i > 0; --i) {
+         System.out.println(i);
+      }
+      System.out.println("Run!");
+   }
+}
+
+// Write code that prints: Ready! numVal … 2 1 Run!
+// Your code should contain a for loop. Print a newline after each number and after each line of text.
