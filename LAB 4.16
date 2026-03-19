@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      String getString = scnr.nextLine();
+      String getLettersString;
+      int i;
+
+      getLettersString = getString.replaceAll("[^a-zA-Z]", "");
+      System.out.println(getLettersString);
+   }
+}
+
+// Write a program that removes all non alpha characters from the given input.
+// Ex: If the input is:
+// -Hello, 1 world$!
+// the output is:
+// Helloworld
