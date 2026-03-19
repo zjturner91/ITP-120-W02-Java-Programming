@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class LoopPatterns {
+   public static void main (String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int loopValue;
+      int i;
+      int j;
+   
+      loopValue = scnr.nextInt();
+
+      for (i = 0; i <= loopValue; ++i) {
+         for (j = 0; j <= i - 1; ++j) {
+            System.out.print('?');
+         }
+         System.out.println(i);
+      }
+   }
+}
+
+// Integer loopValue is read from input. For each number from 0 to loopValue both inclusive, output the number's value of question mark characters ('?') followed by the number on a new line.

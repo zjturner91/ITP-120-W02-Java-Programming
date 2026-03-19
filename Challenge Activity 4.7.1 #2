@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class LoopPatterns {
+   public static void main (String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int numRows;
+      int numColumns;
+      int currentRow;
+      int currentRowInteger;
+      int currentColumn;
+      char currentColumnLetter;
+   
+      numRows = scnr.nextInt();
+      numColumns = scnr.nextInt();
+
+      for (currentRow = 1; currentRow <= numRows; ++currentRow) {
+         for (currentColumn = 0; currentColumn < numColumns; ++currentColumn) {
+            currentColumnLetter = (char)('A' + currentColumn);
+            System.out.print(currentRow + "" + currentColumnLetter + " ");
+         }
+      System.out.println();
+      }
+   }
+}
+
+// In Meg's postal service, each PO box is labeled with an integer followed by a letter. Given integers numRows and numColumns, output the label for each PO box, followed by a space. End each row with a newline.
+// Note:
+// Rows are in ascending order. PO boxes in the first row all start with the integer 1.
+// Columns are in alphabetical order. PO boxes in the first column all end with the letter A.
+// Add an empty string at the beginning of the output to properly concatenate characters and integers.
+
