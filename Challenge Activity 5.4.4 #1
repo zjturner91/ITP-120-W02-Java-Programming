@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class SalaryData {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      final int NUM_ELEMENTS = 6;
+      int[] averageSalaries = new int[NUM_ELEMENTS];
+      int i;
+
+      for (i = 0; i < averageSalaries.length; ++i) {
+         averageSalaries[i] = scnr.nextInt();
+      }
+
+      for (i = (averageSalaries.length / 2) - 1; i >= 0; --i) {
+         if (i > 0) {
+            System.out.print(averageSalaries[i] + " * ");
+         }
+         else {
+            System.out.print(averageSalaries[i]);
+         }
+      }
+
+      System.out.println();
+   }
+}
+
+// Given the integer array averageSalaries with NUM_ELEMENTS elements, write a for loop to output the integers in the first half of averageSalaries in reverse order. Separate the integers with an asterisk surrounded by spaces (" * ").
+// Ex: If the input is 39 32 75 113 76 106, then the output is:
+// 75 * 32 * 39

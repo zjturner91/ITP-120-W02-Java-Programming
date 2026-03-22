@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class MileRange {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      final int ARR_LENGTH = 10;
+      int[] dailyMiles = new int[ARR_LENGTH];
+      int i;
+
+      for (i = dailyMiles.length - 1; i >= (ARR_LENGTH / 2); --i) {
+         dailyMiles[i] = scnr.nextInt();
+      }
+
+      for (i = 0; i < dailyMiles.length; ++i) {
+         System.out.print(dailyMiles[i] + " ");
+      }
+
+      System.out.println();
+   }
+}
+
+// Given the integer array dailyMiles with ARR_LENGTH elements, write a for loop to initialize the second half of dailyMiles with the integers read from input, in reverse order.
+// Ex: If the input is 114 44 89 74 52, then the output is:
+// 0 0 0 0 0 52 74 89 44 114 
