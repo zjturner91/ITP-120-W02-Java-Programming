@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class CustomerList {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+		int customer1;
+		int customer2;
+		int customer3;
+		int customer4;
+      int i;
+
+		customer1 = scnr.nextInt();
+		customer2 = scnr.nextInt();
+		customer3 = scnr.nextInt();
+		customer4 = scnr.nextInt();
+		
+		int[] customerNums = new int[4];
+		customerNums[0] = customer1;
+		customerNums[1] = customer2;
+		customerNums[2] = customer3;
+		customerNums[3] = customer4;
+		System.out.print("Customer numbers: ");
+		for (i = 0; i < customerNums.length; ++i) {
+			System.out.print(customerNums[i] + " ");
+		}
+		System.out.println();
+   }
+}
+
+// Four integers are read from input into four variables, customer1 to customer4. Declare an array of integers named customerNums of size 4. Then, initialize the elements of customerNums with customer1 to customer4, in the order read.
+// Ex: If the input is 53 45 27 17, then the output is:
+// Customer numbers: 53 45 27 17 

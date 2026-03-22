@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class EmployeeLog {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int numVals;
+      int i;
+      
+      numVals = scnr.nextInt();
+      int[] employeeNumbers = new int[numVals];
+      
+		for (i = 0; i < employeeNumbers.length; ++i) {
+			employeeNumbers[i] = scnr.nextInt();
+		}
+
+		System.out.print("Array contents in reverse: ");
+
+      for (i = employeeNumbers.length - 1; i >= 0; --i) {
+         System.out.print(employeeNumbers[i] + " ");
+      }
+      System.out.println();
+   }
+}
+
+// Array employeeNumbers is assigned with numVals integers read from input. Output all elements of employeeNumbers in reverse order, following each element with a space, including the last. After the final output, end with a newline.
+// Ex: If the input is:
+// 4
+// 46 62 17 86
+// then the output is:
+// Array contents in reverse: 86 17 62 46 
+// Note: The loop should start with i = employeeNumbers.length - 1 and end with i = 0.

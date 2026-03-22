@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class ApplicantList {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int numElems;
+      int[] applicantNums;
+      int i;
+		boolean firstSmaller;
+
+      numElems = scnr.nextInt();
+
+      applicantNums = new int[numElems];
+		for (i = 0; i < applicantNums.length; ++i) {
+			applicantNums[i] = scnr.nextInt();
+		}
+
+      if (applicantNums[0] < (applicantNums[applicantNums.length / 2])) {
+         firstSmaller = true;
+      }
+      else {
+         firstSmaller = false;
+      }
+      
+      if (firstSmaller) {
+			System.out.println("First element is less than middle element");
+		}
+		else {
+			System.out.println("First element is not less than middle element");
+		}
+   }
+}
+
+// Array applicantNums is assigned with numElems integers read from input. If the first element is less than the middle element, then assign Boolean firstSmaller with true. Otherwise, assign firstSmaller with false.
+// Ex: If the input is:
+// 5
+// 24 58 60 35 54
+// then the output is:
+// First element is less than middle element
+// Note: The index of the middle element is found by dividing the array's length by 2.
