@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class ReplacePositives {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      final int NUM_VALS = 4;
+      int[] originalArray = new int[NUM_VALS];
+      int[] filterArray = new int[NUM_VALS];
+      int i;
+
+      for (i = 0; i < originalArray.length; ++i) {
+         originalArray[i] = scnr.nextInt();
+      }
+
+      for (i = 0; i < filterArray.length; ++i) {
+         filterArray[i] = scnr.nextInt();
+      }
+
+      for (i = 0; i < originalArray.length; ++i) {
+         if (originalArray[i] > 0) {
+            originalArray[i] = filterArray[i];
+         }
+      }
+
+      for (i = 0; i < originalArray.length; ++i) {
+         System.out.print(originalArray[i] + " ");
+      }
+      System.out.println();
+   }
+}
+
+// Integer array originalArray contains the first NUM_VALS elements read from input, while integer array filterArray contains the next NUM_VALS elements read from input. All the elements in filterArray are negative integers. If an element in originalArray is positive, then replace the element in originalArray with the corresponding element in filterArray.

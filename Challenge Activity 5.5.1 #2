@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class ComputeRelatedArray {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      final int NUM_VALS = 5;
+		int[] totalPointsList = new int[NUM_VALS];
+		int i;
+
+		for (i = 0; i < totalPointsList.length; ++i) {
+			totalPointsList[i] = scnr.nextInt();
+		}
+
+      int[] thricePointsList = new int[NUM_VALS];
+      
+      for (i = 0; i < NUM_VALS; ++i) {
+         thricePointsList[i] = (totalPointsList[i] * 3);
+      }
+
+      for (i = 0; i < thricePointsList.length; ++i) {
+			System.out.print(thricePointsList[i] + " ");
+		}
+		System.out.println();
+   }
+}
+
+// Integer array totalPointsList contains NUM_VALS elements read from input. Declare an integer array thricePointsList with NUM_VALS elements. Then, assign each element in thricePointsList with the corresponding element in totalPointsList multiplied by 3.
