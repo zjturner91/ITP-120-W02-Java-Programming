@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Benefit {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int[] benefitsList;
+      int[] halfList;
+      int numBenefits;
+      int i;
+
+      numBenefits = scnr.nextInt();
+
+      benefitsList = new int[numBenefits];
+
+      for (i = 0; i < benefitsList.length; ++i) {
+         benefitsList[i] = scnr.nextInt();
+      }
+
+      halfList = new int[(benefitsList.length / 2)];
+      
+      for (i = 0; i < halfList.length; ++i) {
+         if (benefitsList[i] < 65) {
+            halfList[i] = benefitsList[i];
+         }
+         else {
+            halfList[i] = 0;
+         }
+      }
+
+      System.out.print("Original benefits: ");
+      for (i = 0; i < benefitsList.length; ++i) {
+         System.out.print(benefitsList[i] + " ");
+      }
+      System.out.println();
+
+      System.out.print("Updated first half: ");      
+      for (i = 0; i < halfList.length; ++i) {
+         System.out.print(halfList[i] + " ");
+      }
+      System.out.println();
+   }
+}
+
+// Integer numBenefits is read from input, representing the number of integers to be read next. Then, the remaining integers are read and stored into array benefitsList. Initialize the array halfList to be half the size of benefitsList. Write a loop that iterates through halfList and:
+// If the corresponding element in the first half of benefitsList is less than 65, then assign the element in halfList with the corresponding element in the first half of benefitsList.
+// Otherwise, assign the element in halfList with 0.

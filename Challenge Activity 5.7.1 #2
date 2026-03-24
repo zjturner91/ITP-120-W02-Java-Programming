@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class ArrayModification {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int[] valsArray;
+      int numValues;
+      int i;
+
+      numValues = scnr.nextInt();
+
+      valsArray = new int[numValues];
+
+      valsArray[0] = scnr.nextInt();
+      valsArray[1] = scnr.nextInt();
+      
+      for (i = 2; i < valsArray.length; ++i) {
+         valsArray[i] = valsArray[i - 1] + valsArray[i - 2];
+      }
+
+      System.out.print("Sequence: ");
+      for (i = 0; i < valsArray.length; ++i) {
+         System.out.print(valsArray[i] + " ");
+      }
+      System.out.println();
+   }
+}
+
+// Integer numValues is read from input, representing the size of array valsArray. Perform the following tasks:
+// Read the element at index 0 of valsArray from input.
+// Read the element at index 1 of valsArray from input.
+// For each element from index 2 to the end of valsArray, assign the element with the sum of the two elements before that index.

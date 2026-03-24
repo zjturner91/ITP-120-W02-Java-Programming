@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class ArrayUpdate {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int[] pointsList;
+      int numElements;
+      int i;
+
+      numElements = scnr.nextInt();
+
+      pointsList = new int[numElements];
+
+      System.out.print("Raw points: ");
+      for (i = 0; i < pointsList.length; ++i) {
+         pointsList[i] = scnr.nextInt();
+         System.out.print(pointsList[i] + " ");
+      }
+      System.out.println();
+
+      for (i = 0; i < pointsList.length; ++i) {
+         if (pointsList[i] > 60) {
+            pointsList[i] = 60;
+         }
+      }
+
+      System.out.print("Adjusted points: ");
+      for (i = 0; i < pointsList.length; ++i) {
+         System.out.print(pointsList[i] + " ");
+      }
+      System.out.println();
+   }
+}
+
+// Integer numElements is read from input, representing the number of integers to be read next. Then, the remaining integers are read and stored into array pointsList. For each element in pointsList that is greater than 60, assign the element with 60.
