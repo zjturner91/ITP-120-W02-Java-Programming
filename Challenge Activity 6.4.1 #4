@@ -1,0 +1,44 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileReading {
+   public static void main(String[] args) throws IOException {
+      Scanner scnr = new Scanner(System.in);
+      FileInputStream fileByteStream = null;
+      Scanner inFS = null;
+      String fileName;
+      int dresserQuantity;
+		int totalDresserQuantity;
+
+      fileName = scnr.next();
+
+      fileByteStream = new FileInputStream(fileName);
+      inFS = new Scanner(fileByteStream);
+		totalDresserQuantity = 0;
+		System.out.println("Started with: " + totalDresserQuantity);
+
+      while (inFS.hasNextInt()) {
+         dresserQuantity = inFS.nextInt();
+
+         System.out.println(dresserQuantity);
+			totalDresserQuantity = totalDresserQuantity + dresserQuantity;
+      }
+
+      if (inFS.hasNext()) {
+         System.out.println("Reading stopped at " + inFS.next());
+      }
+      else {
+         System.out.println("Reached end of file");
+      }
+
+		System.out.println("Sum: " + totalDresserQuantity);
+
+      fileByteStream.close();
+   }
+}
+
+// Scanner inFS is associated with a file that contains the number of dressers sold by a furniture store. A while loop outputs each value read from the file and adds the value to totalDresserQuantity. Complete the following missing parts in the while loop:
+// Iterate while inFS has a valid integer.
+// Read integer dresserQuantity from inFS.
+// End each output with a newline.
