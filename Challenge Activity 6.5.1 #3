@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FileOutput {
+   public static void main(String[] args) throws IOException {
+      Scanner scnr = new Scanner(System.in);
+      FileOutputStream fileStream = null;
+      PrintWriter dataFS = null;
+      int cradleCount;
+      String friendName;
+
+      cradleCount = scnr.nextInt();
+      friendName = scnr.next();
+  
+      fileStream = new FileOutputStream("note.txt");
+      dataFS = new PrintWriter(fileStream);
+
+      dataFS.println("Pick up:");
+      dataFS.println(cradleCount + " cradles for " + friendName);
+      dataFS.close();
+
+   }
+}
+
+// Integer cradleCount and string friendName are read from input. A FileOutputStream named fileStream is declared and the file named note.txt is opened. Then, a PrintWriter named dataFS is declared and associated with the file. Write the following to the opened file:
+// "Pick up:"
+// cradleCount, followed by " cradles for " and friendName
+// End each output with a newline. Finally, close the file.
+// Ex: If the input is 25 Mia, then note.txt contains:
+// Pick up:
+// 25 cradles for Mia

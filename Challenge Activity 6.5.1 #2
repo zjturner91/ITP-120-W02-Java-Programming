@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class OnionFileOutput {
+   public static void main(String[] args) throws IOException {
+      Scanner scnr = new Scanner(System.in);
+      String onionFileName;
+      double onionQuantity;
+      FileOutputStream outStream = null;
+      PrintWriter dataFS = null;      
+
+      onionFileName = scnr.next();
+
+      outStream = new FileOutputStream(onionFileName);
+      dataFS = new PrintWriter(outStream);
+
+      onionQuantity = scnr.nextDouble();
+
+      dataFS.println(onionQuantity + " pounds of onions");
+      dataFS.close();
+   }
+}
+
+// Variables outStream and dataFS are FileOutputStream and PrintWriter, respectively. String onionFileName is assigned a file's name read from input. Perform the following tasks:
+// Assign outStream with a new FileOutputStream that opens onionFileName for writing.
+// Assign dataFS with a new PrintWriter created using outStream.
+// Ex: If the input is note.txt 16.5, then note.txt contains:
+// 16.5 pounds of onions
