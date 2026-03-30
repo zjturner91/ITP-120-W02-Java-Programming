@@ -1,0 +1,22 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class ExpirationMonth {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int expirationMonth;
+
+      try {
+         expirationMonth = scnr.nextInt();
+         System.out.println("Expiration month is " + expirationMonth);
+      }
+
+      catch (InputMismatchException excpt) {
+         System.out.println("Error: Unacceptable input for expiration month");
+      }
+   }
+}
+
+// Write a try block that:
+// Reads integer expirationMonth from input.
+// Outputs "Expiration month is " followed by the value of expirationMonth. End with a newline.

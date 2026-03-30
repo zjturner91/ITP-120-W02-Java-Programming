@@ -1,0 +1,34 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class ManyShaftHeights {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int shaftHeight;
+      int hasRead = 0;
+		boolean continueOn = true;
+
+      while (continueOn) {
+         try {
+            shaftHeight = scnr.nextInt();
+            if (shaftHeight == -1) {
+					System.out.println("Processed " + hasRead + " valid input values");
+					continueOn = false;
+				}
+				else {
+					System.out.println("Shaft's height (in cm): " + shaftHeight);
+					++hasRead;
+				}
+         }
+         
+         catch (InputMismatchException excpt) {
+            System.out.println("Removed unacceptable input for shaft's height");
+            scnr.next();
+         }
+      }
+   }
+}
+
+// The while loop reads values from input until -1 is read. Write a catch block in the while loop to catch an InputMismatchException exception, and:
+// Output "Removed unacceptable input for shaft's height". End with a newline.
+// Discard the invalid input.

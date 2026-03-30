@@ -1,0 +1,20 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class CylinderWeight {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int cylinderWeight;
+
+      try {
+         cylinderWeight = scnr.nextInt();
+         System.out.println("Cylinder's weight (in g) is " + cylinderWeight);
+      }
+
+      catch (InputMismatchException excpt) {
+         System.out.println("Error: Bad input value for cylinder's weight");
+      }   
+   }
+}
+
+// Write a catch block to catch an InputMismatchException exception, and output "Error: Bad input value for cylinder's weight". End with a newline.
