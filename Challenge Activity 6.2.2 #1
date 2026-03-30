@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class OutputFormatting {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      char ticketLetter;
+		double area;
+		int amountCompleted;
+      
+      ticketLetter = scnr.next().charAt(0);
+		area = scnr.nextDouble();
+		amountCompleted = scnr.nextInt();
+
+      System.out.printf("%h%%\n", ticketLetter);
+      System.out.printf("%e%%\n", area);
+      System.out.printf("%d%%\n", amountCompleted);
+
+   }
+}
+
+// Character ticketLetter, double area, and integer amountCompleted are read from input. Output the following:
+// ticketLetter as a hexadecimal integer value, followed by "%".
+// area as a floating-point value in scientific notation, followed by "%".
+// amountCompleted as a decimal integer value, followed by "%".
+// End each output with a newline.
+// Ex: If the input is L 48.75 48, then the output is:
+// 4c%
+// 4.875000e+01%
+// 48%

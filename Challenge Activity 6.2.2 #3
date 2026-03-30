@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class OutputFormatter {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      String lastName;
+      
+      lastName = scnr.next();
+      System.out.printf("Angel" + " ");
+      System.out.printf("%8s\n", lastName);
+
+   }
+}
+
+// String lastName is read from input. Output "Angel ", followed by lastName with a width of 8. End with a newline.
+// Ex: If the input is Miller, then the output is:
+// Angel   Miller

@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class NumFormatter {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int xVal;
+      double yVal;
+      
+      xVal = scnr.nextInt();
+      yVal = scnr.nextDouble();
+
+      System.out.printf("%-7d\n", xVal);
+      System.out.printf("%+06.2f\n", yVal);
+
+   }
+}
+
+// Integer xVal and double yVal are read from input. Output the following:
+// xVal left-aligned and a minimum of 7 characters.
+// yVal with a +/- sign, 0's as padding, a minimum of 6 characters, and 2 digits following the decimal point.
+// End each output with a newline.
+// Ex: If the input is 25 4.25, then the output is:
+// 25     
+// +04.25
