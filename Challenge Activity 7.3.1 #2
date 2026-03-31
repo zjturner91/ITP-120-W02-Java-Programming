@@ -1,0 +1,34 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class ReadInputFile {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      String fennelDataFile;
+      int valueRead;		
+		boolean hasError = false;
+
+      fennelDataFile = scnr.next();
+
+      try (Scanner fileScanner = new Scanner(new FileInputStream(fennelDataFile))) {
+         valueRead = fileScanner.nextInt();
+         System.out.println("Value read from " + fennelDataFile + ": " + valueRead);
+      }
+
+      catch (FileNotFoundException excpt) {
+         hasError = true;
+      }
+
+      /* fileScanner is automatically closed after the try block terminates. */		
+		if (hasError) {
+			System.out.println(fennelDataFile + ": Open operation failed");
+		}
+		else {
+			System.out.println("Success: File processed");
+		}
+   }
+}
+
+// String fennelDataFile is read from input. The try block opens a file named fennelDataFile using a try-with-resources statement, and reads an integer from the file into valueRead.
+// Write an exception handler to catch a FileNotFoundException and assign hasError with true.

@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+// This program uses an overloaded FileInputStream library to check for file closure
+
+public class ReadInputFile {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      FileInputStream fileInStream;
+      Scanner grapeInScanner = null;
+      String grapeDataName;
+		int grapeData = -1;
+		boolean errFound = false;
+		
+		grapeDataName = scnr.next();
+		
+		try {
+			fileInStream = new FileInputStream(grapeDataName);
+			grapeInScanner = new Scanner(fileInStream);
+			grapeData = grapeInScanner.nextInt();
+		}
+		
+      catch (FileNotFoundException excpt) {
+         errFound = true;
+      }
+      
+      if (grapeInScanner != null) {
+         grapeInScanner.close();
+      }
+		
+		if (errFound) {
+			System.out.println(grapeDataName + ": File does not exist");
+		}
+		else {
+			System.out.println("Value read from " + grapeDataName + ": " + grapeData);
+		}
+   }
+}
+
+// String grapeDataName is read from input. The try block opens a file named grapeDataName to read an integer into grapeData.
+// Write an exception handler to catch a FileNotFoundException and assign errFound with true.
+// After the catch block, close grapeInScanner if grapeInScanner is open.

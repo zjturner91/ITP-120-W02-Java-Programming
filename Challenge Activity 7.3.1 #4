@@ -1,0 +1,38 @@
+import java.util.Scanner;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+
+public class WriteCountVolumeFile {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      PrintWriter fWriter = null;
+      String volumeDataFile;
+      double dataValue;
+      int dataCount = 0;
+
+      volumeDataFile = scnr.next();
+      
+      try {
+         fWriter = new PrintWriter(new FileOutputStream(volumeDataFile));
+         for (dataCount = 0; dataCount < 2; ++dataCount) {
+            dataValue = scnr.nextDouble();
+            fWriter.println(dataValue);
+         }
+      }
+      catch (Exception e) {
+         System.out.println("Error!");
+      }
+
+      finally {
+         if (fWriter != null) {
+            fWriter.println(dataCount + " value(s) read");
+            fWriter.close();
+         } 
+      }
+   }
+}
+
+// String volumeDataFile is read from input. The try block opens a file named volumeDataFile for output. Two floating-point numbers are read from input, and each floating-point number is written into the file. Write the finally block to perform the following task:
+// If the output file is open, then:
+// Write to the file dataCount, followed by " value(s) read" and a newline.
+// Close the file.

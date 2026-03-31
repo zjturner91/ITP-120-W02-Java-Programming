@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class ReadInputFile {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      String weightFileName;
+      double weightVal;
+
+      weightFileName = scnr.next();
+
+      try (Scanner weightFileScanner = new Scanner(new FileInputStream(weightFileName))) {
+         weightVal = weightFileScanner.nextDouble();
+         System.out.println("Value read from " + weightFileName + ": " + weightVal);
+      }
+      catch (IOException e) {
+         System.out.println(weightFileName + ": Open operation failed");
+      }
+   }
+}
+
+// String weightFileName is read from input. The try block opens a file named weightFileName to read a floating-point number into weightVal.
+// In the try-with-resources statement, complete the declaration of variable weightFileScanner with a new Scanner object. The Scanner object is constructed with a FileInputStream that is constructed with string weightFileName.
