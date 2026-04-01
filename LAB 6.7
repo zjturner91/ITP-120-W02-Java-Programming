@@ -1,0 +1,115 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.io.IOException;
+
+public class LabProgram {
+   public static void main(String[] args) throws IOException {
+      Scanner scnr = new Scanner(System.in);
+      
+      /* TODO: Declare any necessary variables here.*/
+      FileInputStream inStream = null;
+      FileOutputStream outStream = null;
+      PrintWriter outWriter = null;
+      Scanner inFile = null;
+
+      String student, firstName, lastName, fileName;
+      Character letterGrade = 'x';
+      int i, count = 0, midterm1Score, midterm2Score, finalScore, averageScore;
+      double midterm1Average = 0.0, midterm2Average = 0.0, finalScoreAverage = 0.0;
+	  
+      // TODO: Read a file name from the user and read the tsv file here. 
+      System.out.print("Enter filename: ");
+      fileName = scnr.nextLine();
+      inStream = new FileInputStream(fileName);
+      inFile = new Scanner(inStream);
+
+      outStream = new FileOutputStream("report.txt");
+      outWriter = new PrintWriter(outStream);
+
+      while (inFile.hasNext()) {
+         // Read Variables
+         firstName = inFile.next();
+         lastName = inFile.next();
+         midterm1Score = inFile.nextInt();
+         midterm2Score = inFile.nextInt();
+         finalScore = inFile.nextInt();
+         count = count + 1;
+
+         // Calculate Average Score
+         averageScore = ((midterm1Score + midterm2Score + finalScore) / 3);
+
+         // Find Letter Grade with averageScore
+         if (averageScore >= 90) {
+            letterGrade = 'A';
+         }
+         else if ((averageScore < 90) && (averageScore >= 80)) {
+            letterGrade = 'B';
+         }
+         else if ((averageScore < 80) && (averageScore >= 70)) {
+            letterGrade = 'C';
+         }
+         else if ((averageScore < 70) && (averageScore >= 60)) {
+            letterGrade = 'D';
+         }
+         else if (averageScore < 60) {
+            letterGrade = 'F';
+         }
+         
+         // Find Midterm 1 Average
+         midterm1Average += midterm1Score;
+
+         // Find Midterm 2 Average
+         midterm2Average += midterm2Score;
+
+         // Find Final Score Average
+         finalScoreAverage += finalScore;
+
+         outWriter.printf("%s\t%s\t%d\t%d\t%d\t%s\n", firstName, lastName, midterm1Score, midterm2Score, finalScore, letterGrade);
+         outWriter.flush();
+      } 
+      // Print Averages
+      outWriter.printf("\n%s %.2f%s %.2f%s %.2f\n", "Averages: Midterm1", (midterm1Average / count), ", Midterm2", (midterm2Average / count), ", Final", (finalScoreAverage / count));
+
+      // Close Files
+      outWriter.close();
+      inFile.close();
+   }
+}
+
+// Write a program that reads the student information from a tab separated values (tsv) file. The program then creates a text file that records the course grades of the students. Each row of the tsv file contains the Last Name, First Name, Midterm1 score, Midterm2 score, and the Final score of a student. A sample of the student information is provided in StudentInfo.tsv. Assume the number of students is at least 1 and at most 20. Assume also the last names and first names do not contain whitespaces.
+//
+// The program performs the following tasks:
+//
+// Read the file name of the tsv file from the user.
+// Open the tsv file and read the student information.
+// Compute the average exam score of each student.
+// Assign a letter grade to each student based on the average exam score in the following scale:
+// A: 90 =< x
+// B: 80 =< x < 90
+// C: 70 =< x < 80
+// D: 60 =< x < 70
+// F: x < 60
+// Compute the average of each exam.
+// Output the last names, first names, exam scores, and letter grades of the students into a text file named report.txt. Output one student per row and separate the values with a tab character.
+// Output the average of each exam, with two digits after the decimal point, at the end of report.txt. Hint: Use the precision sub-specifier to format the output.
+// Ex: If the input of the program is:
+//
+// StudentInfo.tsv
+// and the contents of StudentInfo.tsv are:
+//
+// Barrett    Edan    70  45  59
+// Bradshaw    Reagan  96  97  88
+// Charlton    Caius   73  94  80
+// Mayo    Tyrese  88  61  36
+// Stern    Brenda  90  86  45
+// the file report.txt should contain:
+//
+// Barrett    Edan    70  45  59  F
+// Bradshaw    Reagan  96  97  88  A
+// Charlton    Caius   73  94  80  B
+// Mayo    Tyrese  88  61  36  D
+// Stern    Brenda  90  86  45  C
+//
+// Averages: Midterm1 83.40, Midterm2 76.60, Final 61.60
