@@ -1,0 +1,145 @@
+// Storefront Simulation: My program allows users to order fragrances such as cologne and perfume.
+
+package StorefrontSim;
+import java.util.Scanner;
+
+public class Storefront {
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		String getAnswer, currentOrder;
+		String getItem = "", item1 = "Paloma Picasso", item2 = "Acqua di Gio", item3 = "DKNY", item4 = "Versace Man", item5 = "J'adore";
+		String cartList = "", cartItem1 = "", cartItem2 = "", cartItem3 = "", cartItem4 = "", cartItem5 = "";
+		int itemPrice = 0, itemPrice1 = 10, itemPrice2 = 20, itemPrice3 = 30, itemPrice4 = 40, itemPrice5 = 50;
+		int i, x, getItemNumber, getPrice = 0, itemQuantity, orderPrice, totalItems = 0, totalPrice = 0, orderNumber = 0, orderFinished = 0;
+		char answer;
+		
+		// Welcome Message
+		System.out.println("Welcome to Luxury Fragrances.\n\nAt this storefront, we sell designer\nfragrances such as cologne and perfume.");
+		
+		// Display Inventory
+		System.out.println("\nHere is our inventory:\n");
+		System.out.println("#1 " + item1 + ": $" + itemPrice1);
+		System.out.println("#2 " + item2 + ": $" + itemPrice2);
+		System.out.println("#3 " + item3 + ": $" + itemPrice3);
+		System.out.println("#4 " + item4 + ": $" + itemPrice4);
+		System.out.println("#5 " + item5 + ": $" + itemPrice5 + "\n");
+		
+		// Order Prompt
+		System.out.println("Would you like to make an order? (Y/N)");
+		getAnswer = scnr.next();
+		answer = getAnswer.charAt(0);
+		
+		// Begin Order
+		while ((answer == 'Y') || (answer == 'y')) {
+			for (i = 0; orderFinished < 1; ++i) {
+				orderNumber = orderNumber + 1;
+				
+				// Limit Cart Size
+				if (orderNumber > 5) {
+					System.out.println("Cart is full!");
+				}
+				
+				// Determine Item
+				System.out.println("\nEnter your purchase here: (1-5)");
+				getItemNumber = scnr.nextInt();
+				
+				if (getItemNumber == 1) {
+					getItem = item1;
+					getPrice = itemPrice1;
+				}
+				else if (getItemNumber == 2) {
+					getItem = item2;
+					getPrice = itemPrice2;
+				}
+				else if (getItemNumber == 3) {
+					getItem = item3;
+					getPrice = itemPrice3;
+				}
+				else if (getItemNumber == 4) {
+					getItem = item4;
+					getPrice = itemPrice4;
+				}
+				else if (getItemNumber == 5) {
+					getItem = item5;
+					getPrice = itemPrice5;
+				}				
+				else {
+					System.out.println("\nInvalid number. Please enter a number between 1 and 5: ");
+					getItemNumber = scnr.nextInt();
+				}
+			
+				// Determine Quantity and Price
+				System.out.println("\nEnter the quantity: ");
+				itemQuantity = scnr.nextInt();
+				
+				totalItems = totalItems + itemQuantity;
+				orderPrice = itemQuantity * getPrice;
+				totalPrice = totalPrice + orderPrice;
+			
+				currentOrder = ("$" + getPrice + " " + getItem + " (x" + itemQuantity + "): $" + orderPrice + "\n");
+				System.out.println("\n" + currentOrder);
+			
+				// Print Current Order
+				if (orderNumber == 1) {
+					cartItem1 = currentOrder;
+					cartList = cartList + cartItem1;
+				}
+			
+				if (orderNumber == 2) {
+					cartItem2 = currentOrder;
+					cartList = cartList + cartItem2;
+				}
+			
+				if (orderNumber == 3) {
+					cartItem3 = currentOrder;
+					cartList = cartList + cartItem3;
+				}
+				
+				if (orderNumber == 4) {
+					cartItem4 = currentOrder;
+					cartList = cartList + cartItem4;
+				}
+				
+				if (orderNumber == 5) {
+					cartItem5 = currentOrder;
+					cartList = cartList + cartItem1;
+				}
+			
+				// Determine Additional Item
+				System.out.println("Would you like to purchase another item? (Y/N)");
+				getAnswer = scnr.next();
+				answer = getAnswer.charAt(0);
+				
+				// Finish Loop End Order
+				if ((answer == 'N') || (answer == 'n')) {
+					System.out.println("\nThank you for shopping at Luxury Fragrances.");	
+					orderFinished = 1;
+					// Cart Items
+					System.out.println("Here is your receipt: \n");
+					System.out.println(cartList);
+					
+					// Determine Subtotal and Total Price With Tax
+					System.out.println("Subtotal for " + totalItems + " items: $" + totalPrice);
+					System.out.println("Sales Tax: 6.25%");
+					System.out.printf("Total: $%.2f", (totalPrice + (totalPrice * .0625)));
+				}
+			
+				// Continue Loop
+				else {
+					continue;
+				}	
+			}
+		}
+		if ((answer == 'N') || (answer == 'n')) {
+			System.out.println("\nThank you for shopping at Luxury Fragrances.");
+		}
+		
+		else {
+			System.out.println("\nInvalid answer.");
+		}
+	}
+}
+ 
+ 
+// Do not use classes other than your Main
+// Do not use Arrays or Arraylists - only the features we learned in the first 4 chapters.
